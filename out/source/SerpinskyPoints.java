@@ -14,9 +14,9 @@ import java.io.IOException;
 
 public class SerpinskyPoints extends PApplet {
 
-int pointsNumber = 7;           // Number of starting points
+int pointsNumber = 6;           // Number of starting points
 int iterationsPerFrame = 5000;  // Something like an animation speed
-int gridCellSize = 50;          // Grid cell size in pixels
+int gridCellSize = 50;          // Grid cell size in pixels, 0 to disable grid
 int pointsOpacity = 64;         // Drawn points opacity 0-255
 boolean snapToGrid = true;      // Corners snap to grid when dragging
 
@@ -54,6 +54,9 @@ public void draw() {
 }
 
 public void drawGrid(){
+  if (gridCellSize == 0){
+    return;
+  }
   stroke(0xffDFDFDF);
   noFill();
   for (int i = 0; i < width; i += gridCellSize) {
@@ -72,8 +75,8 @@ public void drawCorners(){
 }
 
 public boolean isMouseOnPoint(PVector point){
-  if (mouseX <= point.x + 10 && mouseX >= point.x - 10) {
-    if (mouseY <= point.y + 10 && mouseY >= point.y - 10) {
+  if (mouseX <= point.x + gridCellSize/2 && mouseX >= point.x - gridCellSize/2) {
+    if (mouseY <= point.y + gridCellSize/2 && mouseY >= point.y - gridCellSize/2) {
       return true;
     }
   }
@@ -81,23 +84,37 @@ public boolean isMouseOnPoint(PVector point){
 }
 
 public void mousePressed() {
-  for (PVector point : cornerPoints) {
-    if(isMouseOnPoint(point)) {
-      selectedPoint = point;
+  for (int i = 0; i < cornerPoints.length; i++) {
+    selectedPoint = cornerPoints[i];
+    if(isMouseOnPoint(cornerPoints[i])) {
+      return;
+    }
+    else{
+      selectedPoint = null;
     }
   }
 }
 
+float prevX, prevY;
+
 public void mouseDragged() {
-  if(selectedPoint != null){
-    if(snapToGrid){
-      selectedPoint.x = mouseX - (mouseX % gridCellSize);
-      selectedPoint.y = mouseY - (mouseY % gridCellSize);
+  if(selectedPoint == null){
+    return;
+  }
+  if(snapToGrid){
+    prevX = selectedPoint.x;
+    prevY = selectedPoint.y;
+    selectedPoint.x = (mouseX + gridCellSize/2) - ((mouseX + gridCellSize/2) % gridCellSize);
+    selectedPoint.y = (mouseY + gridCellSize/2) - ((mouseY + gridCellSize/2) % gridCellSize);
+    if(selectedPoint.x != prevX || selectedPoint.y != prevY){
+      background(255);
+      drawGrid();
+      drawCorners();
     }
-    else {
-      selectedPoint.x = mouseX;
-      selectedPoint.y = mouseY;
-    }
+  }
+  else {
+    selectedPoint.x = mouseX;
+    selectedPoint.y = mouseY;    
     background(255);
     drawGrid();
     drawCorners();
