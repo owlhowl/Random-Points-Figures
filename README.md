@@ -1,5 +1,5 @@
 # Serpinsky Figures
-This is a Processing (3.5.4) Serpinsky geometric figures demo, but you choose number of points and can also drag them on the screen and see what happens.
+This is a Processing (3.5.4) Serpinsky geometric figures sketch, made using chaos, but you choose number of points and can also drag them on the screen and see what happens.
 
 Sometimes they may look like a 3D figures but it's only an illusion.
 
@@ -7,19 +7,19 @@ Here are some of them:
 
 **With 3 points:**
 
-![02 04 21 22-11-28](https://user-images.githubusercontent.com/16540012/113414463-65935f80-9400-11eb-9aac-dcd8f55afb7a.png)
+![03 04 21 14-07-21](https://user-images.githubusercontent.com/16540012/113467453-6a9af200-9486-11eb-8397-362f1fe6e6d1.png)
 
 **With 4 points:**
 
-![02 04 21 22-09-37](https://user-images.githubusercontent.com/16540012/113414364-2ebd4980-9400-11eb-852c-f00fda4a79a2.png)
+![03 04 21 14-08-04](https://user-images.githubusercontent.com/16540012/113467457-6ff83c80-9486-11eb-9f50-99608fcb8f55.png)
 
 **With 5 points:**
 
-![02 04 21 22-09-47](https://user-images.githubusercontent.com/16540012/113414365-2fee7680-9400-11eb-8e3e-eb36217591c6.png)
+![03 04 21 14-10-22](https://user-images.githubusercontent.com/16540012/113467458-738bc380-9486-11eb-8a61-7386af003ff2.png)
 
 **With 6 points:**
 
-![02 04 21 22-09-53](https://user-images.githubusercontent.com/16540012/113414366-30870d00-9400-11eb-8c9d-28d5d6d24d2c.png)
+![03 04 21 14-10-46](https://user-images.githubusercontent.com/16540012/113467462-78e90e00-9486-11eb-8748-c37a49b0f5d7.png)
 
 **With grid lines:**
 
