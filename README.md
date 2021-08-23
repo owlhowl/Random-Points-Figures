@@ -1,7 +1,7 @@
-# Serpinsky Figures
-This is a Processing (3.5.4) Serpinsky geometric figures sketch, made using chaos, but you choose number of points and can also drag them on the screen and see what happens.
-
-Sometimes they may look like a 3D figures but it's only an illusion.
+# Figures made with random point generation between origins
+This is a Processing (3.5.4) geometric figures sketch, made using chaos, but you choose number of points and can also drag them on the screen and see what happens.
+There are options in the code to either enable the grid and snapping to grid.
+Sometimes these figures may look like the 3D figures but it's only an illusion.
 
 Here are some of them:
 
